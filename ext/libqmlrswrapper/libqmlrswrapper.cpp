@@ -24,7 +24,7 @@ rust_fun QrsApplicationEngine *qmlrs_create_engine_headless() {
 }
 
 rust_fun QrsApplicationEngine *qmlrs_create_engine() {
-    if (!QGuiApplication::instance()) {
+    if (!QApplication::instance()) {
         char *arg = (char *)malloc(13);
         strcpy(arg, "qmlrswrapper");
         char **argp = (char **)malloc(sizeof(char *));
@@ -33,7 +33,7 @@ rust_fun QrsApplicationEngine *qmlrs_create_engine() {
         int *argc = (int *)malloc(sizeof(int));
         *argc = 1;
 
-        new QGuiApplication(*argc, argp);
+        new QApplication(*argc, argp);
     }
 
     return new QrsApplicationEngine();
