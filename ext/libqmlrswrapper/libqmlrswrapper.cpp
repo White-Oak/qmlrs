@@ -4,6 +4,7 @@
 
 #include <QtQuick>
 #include <QDebug>
+#include <QApplication>
 
 #define rust_fun extern "C"
 
